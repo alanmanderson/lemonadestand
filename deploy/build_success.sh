@@ -1,12 +1,12 @@
 #!/bin/bash
-TARGET="staging"
+TARGET="travis_test"
 
 if [ $TRAVIS_TEST_RESULT -eq 0 ]; then
     echo "Accessing build_success.sh"
     echo "Branch:"
     echo $TRAVIS_BRANCH
     echo "Fetching $TARGET:"
-    git fetch
+    git fetch origin $TARGET
     echo "Calling git show-ref"
     git show-ref
     echo "***************"
