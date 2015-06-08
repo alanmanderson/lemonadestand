@@ -5,8 +5,11 @@ if [ $TRAVIS_TEST_RESULT -eq 0 ]; then
     echo "Accessing build_success.sh"
     echo "Branch:"
     echo $TRAVIS_BRANCH
-    echo "Fetching $TARGET:"
+	echo "updating git config: "
+	git fetch origin $TARGET
+	echo "Changing remote url:"
 	git remote set-url origin https://github.com/alanmanderson/lemonadestand.git
+    echo "Fetching $TARGET:"
     git fetch origin $TARGET
     echo "Calling git show-ref"
     git show-ref
