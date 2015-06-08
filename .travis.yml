@@ -16,9 +16,9 @@ before_script:
 
 script:
   - phpunit --configuration phpunit.xml
-  - bash deploy/build_success.sh;
 
-after success:
+after_success:
+  - bash deploy/build_success.sh;
 
 after_failure:
   # - run some other script if build fails
