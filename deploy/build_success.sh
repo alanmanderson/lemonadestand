@@ -6,7 +6,7 @@ if [ $TRAVIS_TEST_RESULT -eq 0 ]; then
     echo "Branch:"
     echo $TRAVIS_BRANCH
 	echo "updating git config: "
-	git fetch origin $TARGET
+	git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 	echo "Changing remote url:"
 	git remote set-url origin https://github.com/alanmanderson/lemonadestand.git
     echo "Fetching $TARGET:"
