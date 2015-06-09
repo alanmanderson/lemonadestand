@@ -8,7 +8,7 @@ if [ $TRAVIS_TEST_RESULT -eq 0 ]; then
 	echo "updating git config: "
 	git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 	echo "Changing remote url:"
-	#git remote set-url origin https://${GH_TOKEN}:@github.com/alanmanderson/lemonadestand.git
+	git remote set-url origin https://${GH_TOKEN}:@github.com/alanmanderson/lemonadestand.git
     echo "Fetching $TARGET:"
     git fetch origin $TARGET
     echo "Calling git show-ref"
